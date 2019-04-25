@@ -1,0 +1,83 @@
+// Works with Gradle 5.7 and Java 12
+
+// To run this do:
+// ./gradlew run
+
+// To build a distribution zip:
+// ./gradlew distZip
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = 12
+targetCompatibility = 12
+
+version = '0.0.1'
+group = 'fi.pelam.gradlejavafxhelloworldapp'
+mainClassName = "fi.pelam.gradlejavafxhelloworldapp.Main"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.openjfx:javafx:12'
+    compile 'org.openjfx:javafx-graphics:12'
+    compile 'org.openjfx:javafx-base:12'
+    compile 'org.openjfx:javafx-controls:12'
+
+    compile 'org.openjfx:javafx-graphics:12.0.1:mac'
+    compile 'org.openjfx:javafx-controls:12.0.1:mac'
+    compile 'org.openjfx:javafx-base:12.0.1:mac'
+}
+
+run {
+    doFirst {
+        applicationDefaultJvmArgs = [
+                '--module-path', sourceSets.main.runtimeClasspath.asPath,
+                '--add-modules', 'javafx.graphics,javafx.controls'
+        ]
+    }
+}
+
+distributions {
+    main {
+        applicationDefaultJvmArgs = [
+                // This is a nice feature of --module-path. No need to list jars anymore.
+                '--module-path', '@DOLLAR@APP_HOME/lib',
+                '--add-modules', 'javafx.graphics,javafx.controls'
+        ]
+    }
+}
+
+startScripts {
+    unixStartScriptGenerator = new DollarSignEscapeFixer(unixStartScriptGenerator)
+    // TODO: windowsStartScriptGenerator = ... test on windows
+}
+
+compileJava {
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath,
+                '--add-modules', 'javafx.graphics,javafx.controls'
+        ]
+        classpath = files()
+    }
+}
+
+// Having $APP_HOME in applicationDefaultJvmArgs is impossible without this
+class DollarSignEscapeFixer implements ScriptGenerator {
+    private ScriptGenerator original
+
+    DollarSignEscapeFixer(ScriptGenerator original) {
+        this.original = original
+    }
+
+    void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) {
+        StringWriter writer = new StringWriter()
+        original.generateScript(details, writer)
+        destination.write(writer.toString().replaceAll("@DOLLAR@", "\\\$"))
+    }
+}

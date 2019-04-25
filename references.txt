@@ -1,0 +1,49 @@
+My answer
+https://stackoverflow.com/questions/27178895/cannot-resolve-symbol-javafx-application-in-intellij-idea-ide/55843202#55843202
+
+My other answer in the works
+https://stackoverflow.com/questions/31392551/building-a-javafx-application-using-gradle
+
+part written answer at which point I decided to try to make a demo project and found out it is not so simple:
+----
+These instructions work with Java 12:
+
+1) Gradle needs to be configured with the JavaFX Gradle plugin.
+ [Open JavaFX has detailed documentation on this](https://openjfx.io/openjfx-docs/#gradle)
+
+2)
+----
+
+
+Information on gradle and java modules:
+https://stackoverflow.com/questions/53148771/gradle-for-java-11-with-modules
+
+Various links from which I found bits and pieces:
+https://discuss.gradle.org/t/how-can-i-get-the-classpath-from-gradle-to-execute-a-java-program-with/6167
+https://docs.gradle.org/current/userguide/java_plugin.html
+https://stackoverflow.com/questions/46288170/is-it-possible-to-mix-class-path-and-module-path-in-javac-jdk-9
+https://docs.gradle.org/current/userguide/application_plugin.html
+https://stackoverflow.com/questions/35244961/how-do-i-add-default-jvm-arguments-with-gradle
+https://stackoverflow.com/questions/52906773/intellij-idea-error-javafx-runtime-components-are-missing-and-are-required-t
+https://stackoverflow.com/questions/51478675/error-javafx-runtime-components-are-missing-and-are-required-to-run-this-appli
+https://openjfx.io/javadoc/12/javafx.graphics/javafx/application/Application.html
+https://openjfx.io/openjfx-docs/#gradle
+https://openjfx.io/openjfx-docs/#IDE-intellij
+
+JavaFX Hello World java example:
+https://docs.oracle.com/javafx/2/get_started/hello_world.htm
+
+JavaFX Sdk:
+https://gluonhq.com/products/javafx/
+
+The classpath to module-path gradle idea came from here (scroll way down):
+https://guides.gradle.org/building-java-9-modules/ 
+
+References used in tweaking the startup scripts:
+https://github.com/gradle/gradle/blob/master/subprojects/plugins/src/main/java/org/gradle/jvm/application/tasks/CreateStartScripts.java
+https://docs.gradle.org/current/dsl/org.gradle.jvm.application.tasks.CreateStartScripts.html
+https://stackoverflow.com/questions/48307027/in-the-startup-scripts-generated-by-gradles-application-plugin-how-can-i-have
+https://liviutudor.com/2016/02/17/gradle-customize-startup-scripts-for-java-applications/#sthash.Y9yfj3Bc.dpbs
+https://www.mkyong.com/gradle/gradle-multiple-start-script-examples/
+
+https://search.maven.org/artifact/org.openjfx/javafx-graphics/12.0.1/jar
