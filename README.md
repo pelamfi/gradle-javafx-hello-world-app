@@ -21,14 +21,14 @@ Build a distribution zip in `build/distributions`:
 
 ## Dependencies:
   * [Open JDK 12](https://adoptopenjdk.net/?variant=openjdk12&jvmVariant=hotspot)
-  * [Gradle 5.4](https://gradle.org/install/)
+  * [Gradle 5.4.1](https://gradle.org/install/)
   * JavaFX 12 (Will be downloaded by Gradle)
 
 Btw. I heartily recommend [SDKMAN!](https://sdkman.io/) for installing and managing
 the JDK and Gradle versions.
 
     sdk install java 12.0.1-open
-    sdk install gradle 5.4
+    sdk install gradle 5.4.1
 
 ## Background
 I had some trouble setting up this example project. This branch represents an
