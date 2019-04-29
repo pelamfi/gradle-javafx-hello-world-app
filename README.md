@@ -27,26 +27,20 @@ Build a distribution zip in `build/distributions`:
 Btw. I heartily recommend [SDKMAN!](https://sdkman.io/) for installing and managing
 the JDK and Gradle versions.
 
-
     sdk install java 12.0.1-open
     sdk install gradle 5.4
 
 ## Background
-Unfortunately it seems that various tools haven't quite moved up to speed with either
-Java modules and/or JavaFX. A simple app setup like this seems way harder than it
-should be. (Either that or I'm missing something obvious like a gradle plugin or
-configuration. I hope this is the case and I will soon discover what it is.)
+I had some trouble setting up this example project. This branch represents an
+earlier approach that does not use the plugin 'org.openjfx.javafxplugin'.
 
-The JavaFX Gradle plugin does not seem to work, possibly with the recent versions of
- other software I'm trying to use.
-This example project does not use the JavaFX plugin for now. Here is how
-it would be applied according to docs:
+For some reason I didn't get it working at first and on 2nd try after working
+on this branch the plugin based approach worked.
+The [master branch in my example repository](reflects ) now has the plugin.
 
-    // Does not seem to work as documented in https://openjfx.io/openjfx-docs/#gradle
-    id 'org.openjfx.javafxplugin' version '0.0.7'
-    
-I'm considering filing bugs to involved parties once I have some clue as
-to what goes wrong.
-
-Currently the `build.gradle` contains various workarounds
-that should not be necessary.
+However, I still feel that perhaps a plugin like this should not be necessary
+for a simple case and there should be a way to cleanly configure `--module-path`
+and the `--add-modules` settings. Due to this 
+[I filed a bug in the Gradle project](https://github.com/gradle/gradle/issues/9309) using
+this branch as an example. Perhaps I'll just learn something more and can then improve
+these examples.
