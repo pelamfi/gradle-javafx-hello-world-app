@@ -34,9 +34,8 @@ the JDK and Gradle versions.
 I had some trouble setting up this example project. This branch represents an
 earlier approach that does not use the plugin 'org.openjfx.javafxplugin'.
 
-For some reason I didn't get it working at first and on 2nd try after working
-on this branch the plugin based approach worked.
-The [master branch in my example repository](reflects ) now has the plugin.
+For some reason I didn't get the plugin working at first.
+The [master branch in my example repository](https://github.com/pelamfi/gradle-javafx-hello-world-app) now uses the plugin.
 
 However, I still feel that perhaps a plugin like this should not be necessary
 for a simple case and there should be a way to cleanly configure `--module-path`
