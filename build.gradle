@@ -1,4 +1,4 @@
-// Works with Gradle 5.7 and Java 12
+// Works with Gradle 6.3 and Java 14
 
 // To run this do:
 // ./gradlew run
@@ -9,18 +9,18 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.7'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
 }
 
-sourceCompatibility = 12
-targetCompatibility = 12
+sourceCompatibility = 14
+targetCompatibility = 14
 
-version = '0.0.1'
+version = '0.0.2'
 group = 'fi.pelam.gradlejavafxhelloworldapp'
 mainClassName = "$moduleName/fi.pelam.gradlejavafxhelloworldapp.Main"
 
 javafx {
-    version = "12"
+    version = "14"
     modules = [ 'javafx.controls', 'javafx.fxml']
 }
 
