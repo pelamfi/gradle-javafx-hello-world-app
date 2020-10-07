@@ -11,6 +11,10 @@ plugins {
     id 'application'
 }
 
+java {
+    modularity.inferModulePath = true
+}
+
 sourceCompatibility = 15
 targetCompatibility = 15
 
@@ -23,12 +27,12 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openjfx:javafx:15-ea+8'
-    compile 'org.openjfx:javafx-graphics:15-ea+8'
-    compile 'org.openjfx:javafx-base:15-ea+8'
-    compile 'org.openjfx:javafx-controls:15-ea+8'
+    implementation 'org.openjfx:javafx:15-ea+8'
+    implementation 'org.openjfx:javafx-graphics:15-ea+8'
+    implementation 'org.openjfx:javafx-base:15-ea+8'
+    implementation 'org.openjfx:javafx-controls:15-ea+8'
 
-    compile 'org.openjfx:javafx-graphics:15-ea+8:mac'
-    compile 'org.openjfx:javafx-controls:15-ea+8:mac'
-    compile 'org.openjfx:javafx-base:15-ea+8:mac'
+    implementation 'org.openjfx:javafx-graphics:15-ea+8:mac'
+    implementation 'org.openjfx:javafx-controls:15-ea+8:mac'
+    implementation 'org.openjfx:javafx-base:15-ea+8:mac'
 }
