@@ -1,19 +1,78 @@
+
+----
+
+Another SO post related to this:
+https://stackoverflow.com/a/63575805/1148030
+
+----
+
+Another SO post related to this:
+https://stackoverflow.com/questions/51478675/error-javafx-runtime-components-are-missing-and-are-required-to-run-this-appli
+(Asking about the typical error message: Error: JavaFX runtime components are missing, and are required to run this application)
+
+----
+
+Yet another SO post related to this:
+https://stackoverflow.com/questions/46991022/junit-5-java-9-and-gradle-how-to-pass-add-modules
+
+----
+
 My answer
 https://stackoverflow.com/questions/27178895/cannot-resolve-symbol-javafx-application-in-intellij-idea-ide/55843202#55843202
 
 My other answer in the works
 https://stackoverflow.com/questions/31392551/building-a-javafx-application-using-gradle
 
-part written answer at which point I decided to try to make a demo project and found out it is not so simple:
 ----
-These instructions work with Java 12:
+
+An open JavasFX issue about updating the examples to reflect this:
+https://github.com/openjfx/openjfx-docs/issues/55
+
+----
+
+Gradle documentation for the Application plugin which shows how
+to inform the plugin about the module that contains the main:
+https://docs.gradle.org/current/userguide/application_plugin.html
+
+----
+
+Gradle documentation showing how to enable the module support (inferModulePath)
+https://docs.gradle.org/current/samples/sample_java_modules_multi_project.html
+https://guides.gradle.org/building-java-9-modules/ (Previous referred from here)
+
+----
+
+Gradle documentation showing how to set up a Java module:
+https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_modular
+
+----
+
+search.maven.org queries for JavaFX versions:
+https://search.maven.org/search?q=g:org.openjfx%20AND%20a:javafx
+https://search.maven.org/search?q=g:org.openjfx%20AND%20a:javafx-base
+https://search.maven.org/search?q=g:org.openjfx%20AND%20a:javafx-graphics
+https://search.maven.org/search?q=g:org.openjfx%20AND%20a:javafx-controls
+
+----
+
+Old gradle bug report regarding the difficultios I had here (now fixed and will be closed):
+https://github.com/gradle/gradle/issues/9309
+
+----
+
+(OLD) These instructions work with Java 12:
 
 1) Gradle needs to be configured with the JavaFX Gradle plugin.
  [Open JavaFX has detailed documentation on this](https://openjfx.io/openjfx-docs/#gradle)
 
-2)
 ----
 
+Old discussion about these troubles:
+https://discuss.gradle.org/t/gradle-doesnt-add-modules-to-module-path-during-compile/27382/6
+
+----
+
+OLDER LINKS THAT I USED AS A REFERENCE IN PREVIOUS ADVENTURES WITH THIS:
 
 Information on gradle and java modules:
 https://stackoverflow.com/questions/53148771/gradle-for-java-11-with-modules
@@ -47,3 +106,5 @@ https://liviutudor.com/2016/02/17/gradle-customize-startup-scripts-for-java-appl
 https://www.mkyong.com/gradle/gradle-multiple-start-script-examples/
 
 https://search.maven.org/artifact/org.openjfx/javafx-graphics/12.0.1/jar
+
+
