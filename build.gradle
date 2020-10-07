@@ -11,8 +11,8 @@ plugins {
     id 'application'
 }
 
-sourceCompatibility = 12
-targetCompatibility = 12
+sourceCompatibility = 15
+targetCompatibility = 15
 
 version = '0.0.1'
 group = 'fi.pelam.gradlejavafxhelloworldapp'
@@ -23,12 +23,12 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openjfx:javafx:12'
-    compile 'org.openjfx:javafx-graphics:12'
-    compile 'org.openjfx:javafx-base:12'
-    compile 'org.openjfx:javafx-controls:12'
+    compile 'org.openjfx:javafx:15-ea+8'
+    compile 'org.openjfx:javafx-graphics:15-ea+8'
+    compile 'org.openjfx:javafx-base:15-ea+8'
+    compile 'org.openjfx:javafx-controls:15-ea+8'
 
-    compile 'org.openjfx:javafx-graphics:12.0.1:mac'
-    compile 'org.openjfx:javafx-controls:12.0.1:mac'
-    compile 'org.openjfx:javafx-base:12.0.1:mac'
+    compile 'org.openjfx:javafx-graphics:15-ea+8:mac'
+    compile 'org.openjfx:javafx-controls:15-ea+8:mac'
+    compile 'org.openjfx:javafx-base:15-ea+8:mac'
 }
