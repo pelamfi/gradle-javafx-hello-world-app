@@ -11,16 +11,20 @@ plugins {
     id 'application'
 }
 
-java {
-    modularity.inferModulePath = true
-}
-
 sourceCompatibility = 15
 targetCompatibility = 15
 
 version = '0.0.1'
 group = 'fi.pelam.gradlejavafxhelloworldapp'
-mainClassName = "fi.pelam.gradlejavafxhelloworldapp.Main"
+
+java {
+    modularity.inferModulePath = true
+}
+
+application {
+    mainModule = "fi.pelam.gradlejavafxhelloworldapp"
+    mainClass = "fi.pelam.gradlejavafxhelloworldapp.Main"
+}
 
 repositories {
     mavenCentral()
